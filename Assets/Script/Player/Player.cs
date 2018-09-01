@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
             _graphic.flipX = _horizontalMomentum < 0f;
             if (isSwinging)
             {
+
                 // Get normalized direction vector from player to the hook point
                 var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
 
