@@ -18,6 +18,11 @@ MonoBehaviour:
     path: Assets/Scenes/GameTest.unity
     additional_guid: []
     additional_path: []
+  - guid: e53134f44b05a804987fd458551c6f86
+    pin: 0
+    path: Assets/Scenes 1/Game.unity
+    additional_guid: []
+    additional_path: []
   last_scenes: []
   m_hiddenComponents: []
   modulesParamsType:
@@ -115,7 +120,7 @@ MonoBehaviour:
   listKey: []
   listValue: []
   listValueNew: []
-  WasCustomNewApply: 0
+  WasCustomNewApply: 1
   _mFavoritWindowParams_keys: 
   _mFavoritWindowParams_values: []
   PRESETS_DATA: 

@@ -3,6 +3,8 @@ Temp/
 Assets/IgnoreInRepo
 Library/
 Packages/
+obj/
+.vs/
 
 *.sln
 *.csproj
