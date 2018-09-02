@@ -64,7 +64,6 @@ public class RopeSystem : MonoBehaviour
         _playerPosition = transform.position;
 
         SetCrosshairPosition();
-		//SetCrosshairPosition(aimAngle);
 		if (!_ropeAttached)
         {
             playerMovement.isSwinging = false;
@@ -124,9 +123,9 @@ public class RopeSystem : MonoBehaviour
                 if (!_ropePositions.Contains(hit.point))
                 {
                     // Jump slightly to distance the player a little from the ground after grappling to something.
-                    if (Physics2D.Raycast(_playerPosition - Vector2.down, Vector2.down, 3))
+                    if (Physics2D.Raycast(_playerPosition - Vector2.down * .1f, Vector2.down, 1, 1 << 10 | 1 << 0))
                     {
-                        transform.GetComponent<Rigidbody2D>().MovePosition((Vector2)transform.position - Vector2.down * .5f);
+                        transform.GetComponent<Rigidbody2D>().MovePosition((Vector2)transform.position - Vector2.down * 2);
                     }
                     _ropePositions.Add(hit.point);
                     _wrapPointsLookup.Add(hit.point, 0);
@@ -166,18 +165,9 @@ public class RopeSystem : MonoBehaviour
     /// <summary>
     /// Move the aiming crosshair based on aim angle
     /// </summary>
-    // <param name="aimAngle">The mouse aiming angle</param>
-    private void SetCrosshairPosition()//float aimAngle)
+    private void SetCrosshairPosition()
     {
         if (!crosshairSprite.enabled) crosshairSprite.enabled = true;
-
-		/*
-        var x = transform.position.x + 1f * Mathf.Cos(aimAngle);
-        var y = transform.position.y + 1f * Mathf.Sin(aimAngle);
-
-        var crossHairPosition = new Vector3(x, y, 0);
-        crosshair.transform.position = crossHairPosition;
-		*/
 		crosshair.transform.position = playerMovement.GetPlayerForward();
 	}
 
@@ -186,12 +176,13 @@ public class RopeSystem : MonoBehaviour
 	/// </summary>
 	private void HandleRopeLength()
     {
-        if (Input.GetAxis("Vertical") >= 1f && _ropeAttached && !_isColliding)
+		ropeJoint.autoConfigureDistance = true;
+        if (Input.GetAxis("Vertical") >= 1f && _ropeAttached && !_isColliding && ropeJoint.distance > .5f)
         {
 			ropeJoint.autoConfigureDistance = false;
             ropeJoint.distance -= Time.deltaTime * climbSpeed;
-        }
-		else if (Input.GetAxis("Vertical") < 0f && _ropeAttached && ropeJoint.distance < ropeMaxCastDistance)
+		}
+		else if (Input.GetAxis("Vertical") < 0f && _ropeAttached && !_isColliding && ropeJoint.distance < ropeMaxCastDistance)
 		{
 			ropeJoint.autoConfigureDistance = false;
             ropeJoint.distance += Time.deltaTime * climbSpeed;
@@ -200,8 +191,8 @@ public class RopeSystem : MonoBehaviour
 		}
 	}
 
-    void OnTriggerStay2D(Collider2D colliderStay) { _isColliding = true; }
-    void OnTriggerExit2D(Collider2D colliderOnExit) { _isColliding = false; }
+	void OnCollisionStay2D(Collision2D colliderStay) { _isColliding = true; }
+	void OnCollisionExit2D(Collision2D colliderOnExit) { _isColliding = false; }
 
     /// <summary>
     /// Handles updating of the rope hinge and anchor points based on objects the rope can wrap around. These must be PolygonCollider2D physics objects.

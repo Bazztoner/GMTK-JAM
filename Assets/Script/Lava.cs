@@ -14,6 +14,7 @@ public class Lava : MonoBehaviour
 
     void Start()
     {
+		if (!cam) cam = Camera.main;
         Invoke("StartMoving", startDelay);
     }
 
