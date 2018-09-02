@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 81209541694953838}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,6 +117,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1987643095539370
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4981060532824644}
+  m_Layer: 0
+  m_Name: Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4102557859763622
 Transform:
   m_ObjectHideFlags: 1
@@ -165,7 +180,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.24100018, y: -0.2550001, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4981060532824644}
   m_Father: {fileID: 4459053454409540}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,7 +192,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511289901832866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.52, y: 9.05, z: 0}
+  m_LocalPosition: {x: -14.31, y: 9.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4296150493787264}
@@ -199,6 +215,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4459053454409540}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4981060532824644
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987643095539370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0456, y: 0.0047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4338861955926982}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20874439220930590
 Camera:
@@ -340,6 +369,9 @@ MonoBehaviour:
   ropeHook: {x: 0, y: 0}
   isSwinging: 0
   groundCheck: 0
+  arms:
+  - {fileID: 1318528832975944}
+  - {fileID: 1207688147537340}
 --- !u!114 &114998367231810146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,6 +394,7 @@ MonoBehaviour:
   crosshairSprite: {fileID: 212331642201541070}
   playerMovement: {fileID: 114895358933876570}
   ropeMaxCastDistance: 7
+  lineEndPosition: {fileID: 4981060532824644}
 --- !u!120 &120459576282491094
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -402,7 +435,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.075
+    widthMultiplier: 0.06
     widthCurve:
       serializedVersion: 2
       m_Curve:

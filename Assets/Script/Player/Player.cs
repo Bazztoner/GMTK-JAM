@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     Animator _anim;
     float _verticalMomentum;
     float _horizontalMomentum;
+	public GameObject[] arms;
 
     void Awake()
     {
@@ -24,11 +25,14 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {
-        _horizontalMomentum = Input.GetAxis("Horizontal");
-        var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
-        groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
-    }
+	{
+		var aimDirection = GetPlayerForward();
+		for (int i = 0; i < arms.Length; i++) arms[i].transform.right = aimDirection - arms[i].transform.position;
+
+		_horizontalMomentum = Input.GetAxis("Horizontal");
+		var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
+		groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
+	}
 
     void FixedUpdate()
     {
@@ -69,15 +73,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        else
-        {
-
-        }
-
-        if (!isSwinging)
-        {
-            if (!groundCheck) return;
-        }
     }
 
     public void Die()
@@ -85,7 +80,20 @@ public class Player : MonoBehaviour
         //ToDo lives
 
         UIManager.Instance.Endgame();
-        var cam = GetComponentInChildren<Camera>().transform.parent = null;
+        var cam = Camera.main.transform.parent = null;
         gameObject.SetActive(false);
     }
+
+	public Vector3 GetPlayerForward()
+	{
+		var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+		var facingDirection = worldMousePosition - transform.position;
+		var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
+		if (aimAngle < 0f) aimAngle = Mathf.PI * 2 + aimAngle;
+
+		var x = transform.position.x + 1f * Mathf.Cos(aimAngle);
+		var y = transform.position.y + 1f * Mathf.Sin(aimAngle);
+
+		return new Vector3(x, y, 0);
+	}
 }
