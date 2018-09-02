@@ -80,11 +80,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Death()
+    public void Die()
     {
         //ToDo lives
 
         UIManager.Instance.Endgame();
+        var cam = GetComponentInChildren<Camera>().transform.parent = null;
         gameObject.SetActive(false);
     }
 }

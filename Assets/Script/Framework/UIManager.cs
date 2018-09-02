@@ -55,7 +55,7 @@ public class UIManager: MonoBehaviour
     {
         StopCoroutine(_scoreCorr);
         playCanvas.SetActive(false);
-        endgameCanvas.SetActive(false);
+        endgameCanvas.SetActive(true);
         SetFinalScore();
     }
 
