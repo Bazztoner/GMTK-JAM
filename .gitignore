@@ -1,6 +1,7 @@
 
 Temp/
 Assets/IgnoreInRepo
+Assets/IgnoreInRepo.meta
 Library/
 Packages/
 obj/
