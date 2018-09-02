@@ -55,6 +55,7 @@ public class UIManager: MonoBehaviour
     {
         StopCoroutine(_scoreCorr);
         playCanvas.SetActive(false);
+        GameObject.FindObjectOfType<HideInstructions>().inst.SetActive(false);
         endgameCanvas.SetActive(true);
         SetFinalScore();
     }

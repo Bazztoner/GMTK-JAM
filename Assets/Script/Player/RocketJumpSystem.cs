@@ -44,5 +44,6 @@ public class RocketJumpSystem : MonoBehaviour
         go.transform.right = aimDirection;
         _rigidbody.AddForce(-aimDirection * fireForce, ForceMode2D.Impulse);
         _cooldown = cooldown;
+        SoundMenu.Instance.PlayClip(SoundMenu.Audios.COCONUT);
     }
 }

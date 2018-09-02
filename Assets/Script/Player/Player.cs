@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         //ToDo lives
+        SoundMenu.Instance.PlayClip(SoundMenu.Audios.DEATH);
 
         UIManager.Instance.Endgame();
         var cam = Camera.main.transform.parent = null;
