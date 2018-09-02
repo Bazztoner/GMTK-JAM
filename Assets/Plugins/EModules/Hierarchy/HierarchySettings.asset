@@ -13,6 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pluginID: 0
   last_scenesV2:
+  - guid: 99c9720ab356a0642a771bea13969a05
+    pin: 0
+    path: Assets/Scenes/Game.unity
+    additional_guid: []
+    additional_path: []
   - guid: d8f2ded0018146b43843a4e107cd3a2f
     pin: 0
     path: Assets/Scenes/Menu.unity
@@ -21,11 +26,6 @@ MonoBehaviour:
   - guid: c45ea334a985f0740b2d50771475c071
     pin: 0
     path: Assets/Scenes/Credits.unity
-    additional_guid: []
-    additional_path: []
-  - guid: 99c9720ab356a0642a771bea13969a05
-    pin: 0
-    path: Assets/Scenes/Game.unity
     additional_guid: []
     additional_path: []
   - guid: 41a2e2ac7c2766f4cba57f6e171ee443
