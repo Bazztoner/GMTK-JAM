@@ -4,24 +4,24 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 
-public class UIManager: MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-	static UIManager _instance;
-	public static UIManager Instance
-	{
-		get
-		{
-			if(_instance == null)
-			{
-				_instance = FindObjectOfType<UIManager>();
-				if(_instance == null)
-				{
-					_instance = new GameObject("UIManager Singleton").AddComponent<UIManager>().GetComponent<UIManager>();
-				}
-			}
-			return _instance;
-		}
-	}
+    static UIManager _instance;
+    public static UIManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<UIManager>();
+                if (_instance == null)
+                {
+                    _instance = new GameObject("UIManager Singleton").AddComponent<UIManager>().GetComponent<UIManager>();
+                }
+            }
+            return _instance;
+        }
+    }
 
     public GameObject playCanvas;
     public GameObject endgameCanvas;
@@ -55,7 +55,11 @@ public class UIManager: MonoBehaviour
     {
         StopCoroutine(_scoreCorr);
         playCanvas.SetActive(false);
-        GameObject.FindObjectOfType<HideInstructions>().inst.SetActive(false);
+        var coso = GameObject.FindObjectOfType<HideInstructions>();
+        if (coso)
+        {
+            coso.inst.SetActive(false);
+        }
         endgameCanvas.SetActive(true);
         SetFinalScore();
     }
