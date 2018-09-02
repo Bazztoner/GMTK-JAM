@@ -79,4 +79,12 @@ public class Player : MonoBehaviour
             if (!groundCheck) return;
         }
     }
+
+    void Death()
+    {
+        //ToDo lives
+
+        UIManager.Instance.Endgame();
+        gameObject.SetActive(false);
+    }
 }

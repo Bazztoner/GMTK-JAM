@@ -13,7 +13,7 @@ public class RopeSystem : MonoBehaviour
     public Transform crosshair;
     public SpriteRenderer crosshairSprite;
     public Player playerMovement;
-    public float ropeMaxCastDistance = 20f;
+    public float ropeMaxCastDistance = 7f;
 
     bool _ropeAttached;
     Vector2 _playerPosition;
@@ -190,7 +190,7 @@ public class RopeSystem : MonoBehaviour
         {
             ropeJoint.distance -= Time.deltaTime * climbSpeed;
         }
-        else if (Input.GetAxis("Vertical") < 0f && _ropeAttached)
+        else if (Input.GetAxis("Vertical") < 0f && _ropeAttached && ropeJoint.distance < ropeMaxCastDistance)
         {
             ropeJoint.distance += Time.deltaTime * climbSpeed;
         }
