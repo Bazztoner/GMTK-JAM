@@ -5,7 +5,7 @@ using System.Linq;
 
 public class LevelModule : MonoBehaviour
 {
-    void SpawnNext()
+    public void SpawnNext()
     {
         LevelSpawner.instance.SpawnNext(1, transform.localPosition.x);
     }

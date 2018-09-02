@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4726039855229380}
   - component: {fileID: 33674313288110690}
   - component: {fileID: 23686532916892316}
+  - component: {fileID: 114335577335880548}
   m_Layer: 0
   m_Name: StartModule
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4320219058515344}
   - component: {fileID: 33199959704859192}
   - component: {fileID: 23307933097590694}
+  - component: {fileID: 114890786529177208}
   - component: {fileID: 61989657251246910}
   m_Layer: 0
   m_Name: ModuleSpawner
@@ -177,7 +179,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052885460750074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -229,7 +231,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -245,6 +247,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114335577335880548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052885460750074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dde94e2cba8d64f9f1232b187bcad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114890786529177208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276691473442360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9429ff18023c2544c9f4f66b27d1bd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!19719996 &2113883507147101568
 TilemapCollider2D:
   m_ObjectHideFlags: 1

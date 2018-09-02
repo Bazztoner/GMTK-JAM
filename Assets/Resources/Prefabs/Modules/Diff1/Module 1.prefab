@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4552901308906770}
   - component: {fileID: 33047432762464542}
   - component: {fileID: 23932742151061678}
+  - component: {fileID: 114069119299033296}
   m_Layer: 0
   m_Name: Module 1
   m_TagString: Untagged
@@ -73,6 +74,7 @@ GameObject:
   - component: {fileID: 4008320626479478}
   - component: {fileID: 33982070957754270}
   - component: {fileID: 23987921988124102}
+  - component: {fileID: 114466226551526852}
   - component: {fileID: 61540350105236830}
   m_Layer: 0
   m_Name: Module Spawner
@@ -229,7 +231,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -245,6 +247,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114069119299033296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416329591882084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dde94e2cba8d64f9f1232b187bcad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114466226551526852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848842409813812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9429ff18023c2544c9f4f66b27d1bd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!19719996 &2113883506013117212
 TilemapCollider2D:
   m_ObjectHideFlags: 1
