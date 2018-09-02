@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889864013afda5d42aa72d53f5160312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketPrefab: {fileID: 1559609816726836, guid: 6d084ccd1fe1ba34bb38f1c9861f8715,
+  rocketPrefab: {fileID: 1970990487827234, guid: 6c26f1d2d8552904199bca41e8b20de9,
     type: 2}
   fireForce: 6
   cooldown: 0.65
