@@ -17,6 +17,11 @@ public class RocketJumpSystem : MonoBehaviour
 		_rigidbody = GetComponent<Rigidbody2D>();
 	}
 
+	void Start()
+	{
+		if (!rocketPrefab) rocketPrefab = (GameObject)Resources.Load("Prefabs/Rocket");
+	}
+
 	void Update()
 	{
 		var worldMousePosition = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));

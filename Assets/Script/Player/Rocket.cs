@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+	private Rigidbody2D _rigidbody;
 	public float speed, destroyTimer = 3;
 
+	private void Awake() { _rigidbody = GetComponent<Rigidbody2D>(); }
 	private void Start() { Destroy(gameObject, destroyTimer); }
 
-	void Update () { transform.position += transform.right * speed * Time.deltaTime; }
-
+	void FixedUpdate() { _rigidbody.MovePosition(transform.position + transform.right * speed * Time.deltaTime); }
 	private void OnCollisionEnter2D(Collision2D c) { Destroy(gameObject); }
 }
