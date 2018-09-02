@@ -11,5 +11,5 @@ public class Rocket : MonoBehaviour
     private void Start() { Destroy(gameObject, destroyTimer); }
 
     void FixedUpdate() { _rigidbody.MovePosition(transform.position + transform.right * speed * Time.deltaTime); }
-    private void OnCollisionEnter2D(Collision2D c) { Destroy(gameObject); }
+    private void OnCollisionEnter2D(Collision2D c) { if (c.gameObject.layer != 13) Destroy(gameObject); }
 }
