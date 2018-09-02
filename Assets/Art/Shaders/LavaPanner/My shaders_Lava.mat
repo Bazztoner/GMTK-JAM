@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: My shaders_Lava
+  m_Shader: {fileID: 4800000, guid: 0975f05630f0e0d409a08b79f00d5574, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Flowmap:
+        m_Texture: {fileID: 2800000, guid: 11a4ff5fb39bb9b43b942cbed34ebc38, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 30e06c5ee7c73024d81d7a254ab91e08, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: 07574bf962e411c4e91ec6bdda268731, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNoise:
+        m_Texture: {fileID: 2800000, guid: 27bf260c097767b40b727eca3f7bd42c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 2800000, guid: 27bf260c097767b40b727eca3f7bd42c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample2:
+        m_Texture: {fileID: 2800000, guid: b1329f1058136104583f932460d1ad7f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _EdgeLength: 2
+    - _Float0: 0.88
+    - _LerpFlowmap: 0.94
+    - _SpeedX: 0.3
+    - _SpeedY: -0.1
+    - _Tiling: 1
+    - __dirty: 0
+    m_Colors:
+    - _Speed1: {r: 0.12, g: 0.1, b: 0, a: 0}
+    - _Speed2: {r: -0.12, g: -0.1, b: 0, a: 0}
+    - _SpeedPan1: {r: 0.12, g: 0.27, b: 0, a: 0}
+    - _SpeedPan2: {r: -0.3, g: 0.5, b: 0, a: 0}
+    - _Vector0: {r: 0, g: 0, b: 0, a: 0}
+    - _VertexOffset: {r: 0, g: 0.25, b: 0, a: 0}
