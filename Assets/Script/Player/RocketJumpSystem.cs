@@ -9,11 +9,9 @@ public class RocketJumpSystem : MonoBehaviour
     private float _cooldown;
     private bool _isCoolingDown { get { return _cooldown != 0; } }
     private Rigidbody2D _rigidbody;
-    private Camera _camera;
 
     void Awake()
     {
-        _camera = GetComponentInChildren<Camera>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -24,7 +22,7 @@ public class RocketJumpSystem : MonoBehaviour
 
     void Update()
     {
-        var worldMousePosition = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
         var facingDirection = worldMousePosition - transform.position;
         var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
         if (aimAngle < 0f) aimAngle = Mathf.PI * 2 + aimAngle;
