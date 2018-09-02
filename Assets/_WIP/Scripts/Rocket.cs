@@ -16,8 +16,5 @@ public class Rocket : MonoBehaviour
 		transform.position += transform.right * speed * Time.deltaTime;
 	}
 
-	private void OnCollisionEnter(Collision c) { Destroy(gameObject); }
-	private void OnTriggerEnter(Collider c) { Destroy(gameObject); }
 	private void OnCollisionEnter2D(Collision2D c) { Destroy(gameObject); }
-	private void OnTriggerEnter2D(Collider2D c) { Destroy(gameObject); }
 }
